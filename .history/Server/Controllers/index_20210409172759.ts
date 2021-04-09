@@ -58,8 +58,8 @@ export function DisplayRegisterPage(req:Request, res:Response, next:NextFunction
         { 
             title: 'Register', 
             page: 'register',
-            messages: req.flash('registerMessage'), 
-            displayName: req.user ? req.user.displayName : ''    
+            messages: req.flash('loginMessage'), 
+            displayName: ''    
         });
     }
     return res.redirect('/contact-list');

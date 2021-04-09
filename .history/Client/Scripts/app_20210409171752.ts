@@ -97,6 +97,9 @@ namespace core
 
     function displayContactList() :void
     {
+      // don't allow visitors to go here
+      authGuard();
+
       // confirm deletion
       $("a.delete").on("click", function(event){
         if(!confirm("Are you sure?"))
@@ -120,9 +123,8 @@ namespace core
      //TODO: validation
     }
 
-    function displayRegister():void
-    {
-      //TODO: validation
+    function displayRegister():void{
+      
     }
 
     /**

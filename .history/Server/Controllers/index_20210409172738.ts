@@ -57,9 +57,8 @@ export function DisplayRegisterPage(req:Request, res:Response, next:NextFunction
         res.render('index', 
         { 
             title: 'Register', 
-            page: 'register',
-            messages: req.flash('registerMessage'), 
-            displayName: req.user ? req.user.displayName : ''    
+            page: 'register', 
+            displayName: ''    
         });
     }
     return res.redirect('/contact-list');
