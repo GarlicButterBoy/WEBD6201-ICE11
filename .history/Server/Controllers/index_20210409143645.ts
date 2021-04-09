@@ -37,13 +37,7 @@ export function DisplayLoginPage(req:Request, res:Response, next:NextFunction): 
 {
     if (!req.user)
     {
-        res.render('index', 
-        {
-             title: 'Login', 
-             page: 'login', 
-             messages: req.flash('loginMessage'),
-             displayName: req.user ? req.user.displayName : ''
-            });
+        res.render('index', { title: 'Login', page: 'login', displayName: ''    });
     }
 
     return res.redirect('/contact-list');
@@ -62,32 +56,7 @@ export function DisplayRegisterPage(req:Request, res:Response, next:NextFunction
 //Procees Page Function
 export function ProcessLoginPage(req:Request, res:Response, next:NextFunction): void
 {
-    passport.authenticate('local', (err, user, info) => {
-        //are there server errors
-        if(err)
-        {
-            console.error(err);
-            return next(err);
-        }
-
-        //are there login errors?
-        if(!user)
-        {
-            req.flash('loginMessage', 'Authentication Error');
-            return res.redirect('/login');
-        }
-
-        req.login(user, (err) =>{
-            //are there db errors
-            if(err)
-            {
-                console.error(err);
-                return next(err);
-            }
-
-            return res.redirect('/contact-list');
-        });
-    })(req, res, next);
+    passport.authenticate('local', (err));
 
     res.redirect('/contact-list');
 

@@ -41,8 +41,7 @@ export function DisplayLoginPage(req:Request, res:Response, next:NextFunction): 
         {
              title: 'Login', 
              page: 'login', 
-             messages: req.flash('loginMessage'),
-             displayName: req.user ? req.user.displayName : ''
+             displayName: ''    
             });
     }
 
