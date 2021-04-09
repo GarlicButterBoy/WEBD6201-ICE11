@@ -7,7 +7,7 @@ import Contact from "../Models/contact";
 
 
 //Create an Index Controller Instance
-import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayLoginPage, DisplayProjectsPage, DisplayRegisterPage, DisplayServicesPage, ProcessLoginPage, ProcessLogoutPage, ProcessRegisterPage} from '../Controllers/index';
+import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayLoginPage, DisplayProjectsPage, DisplayRegisterPage, DisplayServicesPage, ProcessLoginPage, ProcessLogoutPage} from '../Controllers/index';
 
 
 /* GET home page - with / */
@@ -43,7 +43,7 @@ router.post('/login', ProcessLoginPage);
 router.get('/logout', ProcessLogoutPage);
 
 /* Process login page - with /login */
-router.post('/register', ProcessRegisterPage);
+router.post('/register', ProcessLoginPage);
 
 
 /********************** temporary routes - contact-list related pages **********************/

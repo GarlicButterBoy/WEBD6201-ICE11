@@ -46,12 +46,12 @@ export function DisplayRegisterPage(req:Request, res:Response, next:NextFunction
 //Procees Page Functions
 
 
-export function ProcessLoginPage(req:Request, res:Response, next:NextFunction): void
+export function ProccessLoginPage(req:Request, res:Response, next:NextFunction): void
 {
-    res.redirect('/contact-list');
+    res.render('index', { title: 'Home', page: 'home', displayName: ''    });
 }
 
-export function ProcessLogoutPage(req:Request, res:Response, next:NextFunction): void
+export function ProccessLogoutPage(req:Request, res:Response, next:NextFunction): void
 {
     res.render('index', { title: 'Home', page: 'home', displayName: ''    });
 }
@@ -61,7 +61,7 @@ export function ProcessRegisterPage(req:Request, res:Response, next:NextFunction
     res.render('index', { title: 'Home', page: 'home', displayName: ''    });
 }
 
-export function ProcessContactPage(req:Request, res:Response, next:NextFunction): void
+export function ProccessContactPage(req:Request, res:Response, next:NextFunction): void
 {
     res.render('index', { title: 'Home', page: 'home', displayName: ''    });
 }

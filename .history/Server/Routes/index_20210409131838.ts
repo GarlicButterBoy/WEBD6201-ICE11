@@ -7,7 +7,7 @@ import Contact from "../Models/contact";
 
 
 //Create an Index Controller Instance
-import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayLoginPage, DisplayProjectsPage, DisplayRegisterPage, DisplayServicesPage, ProcessLoginPage, ProcessLogoutPage, ProcessRegisterPage} from '../Controllers/index';
+import {DisplayAboutPage, DisplayHomePage} from '../Controllers/index';
 
 
 /* GET home page - with / */
@@ -20,30 +20,49 @@ router.get('/home', DisplayHomePage);
 router.get('/about', DisplayAboutPage);
 
 /* GET services page - with /services */
-router.get('/services', DisplayServicesPage);
+router.get('/services', function(req, res, next) 
+{
+  
+});
 
 /* GET projects page - with /projects */
-router.get('/projects', DisplayProjectsPage);
+router.get('/projects', function(req, res, next) 
+{
+  
+});
 
 /* GET contact page - with /contact */
-router.get('/contact', DisplayContactPage);
+router.get('/contact', function(req, res, next) 
+{
+  
+});
 
 /* GET login page - with /login */
-router.get('/login', DisplayLoginPage);
-
-/* GET register page - with /register */
-router.get('/register', DisplayRegisterPage);
+router.get('/login', function(req, res, next) 
+{
+  
+});
 
 
 /**************** Temporary routes for authentication and registration *********************/
-/* Process login page - with /login */
-router.post('/login', ProcessLoginPage);
+/* GET login page - with /login */
+router.post('/login', function(req, res, next) 
+{
+  res.redirect('/contact-list');
+});
 
-/* Process logout page - with /logout */
-router.get('/logout', ProcessLogoutPage);
 
-/* Process login page - with /login */
-router.post('/register', ProcessRegisterPage);
+/* GET register page - with /register */
+router.get('/register', function(req, res, next) 
+{
+  res.render('index', { title: 'Register', page: 'register', displayName: ''    });
+});
+
+/* GET logout page - with /logout */
+router.get('/logout', function(req, res, next) 
+{
+  res.render('index', { title: 'Logout', page: 'logout', displayName: ''    });
+});
 
 
 /********************** temporary routes - contact-list related pages **********************/

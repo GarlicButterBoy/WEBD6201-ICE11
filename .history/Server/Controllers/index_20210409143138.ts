@@ -48,7 +48,7 @@ export function DisplayRegisterPage(req:Request, res:Response, next:NextFunction
 
 export function ProcessLoginPage(req:Request, res:Response, next:NextFunction): void
 {
-    res.redirect('/contact-list');
+    res.redirect
 }
 
 export function ProcessLogoutPage(req:Request, res:Response, next:NextFunction): void
