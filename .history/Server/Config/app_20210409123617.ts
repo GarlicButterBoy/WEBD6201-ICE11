@@ -27,12 +27,12 @@ export default app;
 
 // DB configuration
 import * as DBConfig from './db';
-mongoose.connect(DBConfig.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DBConfig.Path, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log(`Connected to MongoDB at: ${DBConfig.URI}`);
+  console.log(`Connected to MongoDB at: ${DBConfig.Path}`);
 });
 
 
@@ -47,30 +47,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-
-//setup express session
-app.use(session
-  ({
-    secret: DBConfig.Secret,
-    saveUninitialized: false,
-    resave: false
-  }));
-
-  //Initialize Flash
-  app.use(flash());
-
-  //Initialize passport
-  app.use(passport.initialize());
-  app.use(passport.session());
-
-  //implement an Auth Strategy
-  passport.use(User.createStrategy());
-
-  //serialize and deserialize user data
-  passport.serializeUser(User.serializeUser());
-  passport.deserializeUser(User.deserializeUser()); 
-
-  //route configuration
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

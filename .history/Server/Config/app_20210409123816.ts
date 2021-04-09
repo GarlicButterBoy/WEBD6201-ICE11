@@ -49,28 +49,11 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 
 //setup express session
-app.use(session
-  ({
-    secret: DBConfig.Secret,
-    saveUninitialized: false,
-    resave: false
-  }));
+app.use(session({
+  
+}))
 
-  //Initialize Flash
-  app.use(flash());
 
-  //Initialize passport
-  app.use(passport.initialize());
-  app.use(passport.session());
-
-  //implement an Auth Strategy
-  passport.use(User.createStrategy());
-
-  //serialize and deserialize user data
-  passport.serializeUser(User.serializeUser());
-  passport.deserializeUser(User.deserializeUser()); 
-
-  //route configuration
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

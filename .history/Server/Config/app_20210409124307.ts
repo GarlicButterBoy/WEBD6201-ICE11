@@ -70,7 +70,7 @@ app.use(session
   passport.serializeUser(User.serializeUser());
   passport.deserializeUser(User.deserializeUser()); 
 
-  //route configuration
+  
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

@@ -60,17 +60,9 @@ app.use(session
   app.use(flash());
 
   //Initialize passport
-  app.use(passport.initialize());
-  app.use(passport.session());
+  app.use(passport.initialize)
 
-  //implement an Auth Strategy
-  passport.use(User.createStrategy());
 
-  //serialize and deserialize user data
-  passport.serializeUser(User.serializeUser());
-  passport.deserializeUser(User.deserializeUser()); 
-
-  //route configuration
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
