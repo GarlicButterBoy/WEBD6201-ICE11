@@ -7,12 +7,9 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 exports.default = router;
 const contact_1 = __importDefault(require("../Models/contact"));
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Home', page: 'home', displayName: '' });
-});
-router.get('/home', function (req, res, next) {
-    res.render('index', { title: 'Home', page: 'home', displayName: '' });
-});
+const index_1 = require("../Controllers/index");
+router.get('/', index_1.DisplayHomePage);
+router.get('/home', index_1.DisplayHomePage);
 router.get('/about', function (req, res, next) {
     res.render('index', { title: 'About Us', page: 'about', displayName: '' });
 });

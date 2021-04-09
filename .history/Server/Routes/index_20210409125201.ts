@@ -14,7 +14,10 @@ import {DisplayHomePage} from '../Controllers/index';
 router.get('/', DisplayHomePage);
 
 /* GET home page - with /home */
-router.get('/home', DisplayHomePage);
+router.get('/home', function(req, res, next) 
+{
+  res.render('index', { title: 'Home', page: 'home', displayName: ''    });
+});
 
 /* GET about page - with /about */
 router.get('/about', function(req, res, next) 

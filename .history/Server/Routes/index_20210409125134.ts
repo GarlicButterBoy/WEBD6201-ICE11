@@ -11,10 +11,16 @@ import {DisplayHomePage} from '../Controllers/index';
 
 
 /* GET home page - with / */
-router.get('/', DisplayHomePage);
+router.get('/', function(req, res, next) 
+{
+  res.render('index', { title: 'Home', page: 'home', displayName: ''   });
+});
 
 /* GET home page - with /home */
-router.get('/home', DisplayHomePage);
+router.get('/home', function(req, res, next) 
+{
+  res.render('index', { title: 'Home', page: 'home', displayName: ''    });
+});
 
 /* GET about page - with /about */
 router.get('/about', function(req, res, next) 
