@@ -3,7 +3,7 @@ import express from 'express';
 const router = express.Router();
 export default router;
 // Contact Model
-import Contact from "../Models/contact";
+import * as ContactModel from "../Models/contact";
 
 
 /* GET home page - with / */

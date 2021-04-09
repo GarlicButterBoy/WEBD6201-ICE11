@@ -7,7 +7,7 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 
 // App configuration
-import indexRouter from '../Routes/index';
+import * as indexRouter from '../Routes/index';
 const app = express();
 export default app;
 
@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-app.use('/', indexRouter);
+app.use('/', indexRouter.router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
