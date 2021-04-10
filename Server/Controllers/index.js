@@ -6,18 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessContactPage = exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.ProcessLoginPage = exports.DisplayRegisterPage = exports.DisplayLoginPage = exports.DisplayContactPage = exports.DisplayProjectsPage = exports.DisplayServicesPage = exports.DisplayAboutPage = exports.DisplayHomePage = void 0;
 const passport_1 = __importDefault(require("passport"));
 const user_1 = __importDefault(require("../Models/user"));
-function UserDisplayName(req) {
-    if (req.user) {
-        let user = req.user;
-        return user.displayName.toString();
-    }
-    return '';
-}
+const index_1 = require("../Util/index");
 function DisplayHomePage(req, res, next) {
     res.render('index', {
         title: 'Home',
         page: 'home',
-        displayName: UserDisplayName(req)
+        displayName: index_1.UserDisplayName(req)
     });
 }
 exports.DisplayHomePage = DisplayHomePage;
@@ -25,7 +19,7 @@ function DisplayAboutPage(req, res, next) {
     res.render('index', {
         title: 'About Us',
         page: 'about',
-        displayName: UserDisplayName(req)
+        displayName: index_1.UserDisplayName(req)
     });
 }
 exports.DisplayAboutPage = DisplayAboutPage;
@@ -33,14 +27,14 @@ function DisplayServicesPage(req, res, next) {
     res.render('index', {
         title: 'Our Services',
         page: 'services',
-        displayName: UserDisplayName(req)
+        displayName: index_1.UserDisplayName(req)
     });
 }
 exports.DisplayServicesPage = DisplayServicesPage;
 function DisplayProjectsPage(req, res, next) {
     res.render('index', { title: 'Our Projects',
         page: 'projects',
-        displayName: UserDisplayName(req)
+        displayName: index_1.UserDisplayName(req)
     });
 }
 exports.DisplayProjectsPage = DisplayProjectsPage;
@@ -48,7 +42,7 @@ function DisplayContactPage(req, res, next) {
     res.render('index', {
         title: 'Contact Us',
         page: 'contact',
-        displayName: UserDisplayName(req)
+        displayName: index_1.UserDisplayName(req)
     });
 }
 exports.DisplayContactPage = DisplayContactPage;
@@ -58,7 +52,7 @@ function DisplayLoginPage(req, res, next) {
             title: 'Login',
             page: 'login',
             messages: req.flash('loginMessage'),
-            displayName: UserDisplayName(req)
+            displayName: index_1.UserDisplayName(req)
         });
     }
     return res.redirect('/contact-list');
@@ -70,7 +64,7 @@ function DisplayRegisterPage(req, res, next) {
             title: 'Register',
             page: 'register',
             messages: req.flash('registerMessage'),
-            displayName: UserDisplayName(req)
+            displayName: index_1.UserDisplayName(req)
         });
     }
     return res.redirect('/contact-list');
@@ -127,7 +121,7 @@ function ProcessContactPage(req, res, next) {
     res.render('index', {
         title: 'Home',
         page: 'home',
-        displayName: UserDisplayName(req)
+        displayName: index_1.UserDisplayName(req)
     });
 }
 exports.ProcessContactPage = ProcessContactPage;
