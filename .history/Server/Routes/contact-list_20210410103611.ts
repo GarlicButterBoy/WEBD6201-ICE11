@@ -22,6 +22,6 @@ router.post('/edit/:id', RequireAuth, ProcessEditPage);
 router.post('/add', RequireAuth, ProcessAddPage);
 
 /* Process delete/:id page - with /delete/:id */
-router.get('/delete/:id', RequireAuth, ProcessDeletePage);
+router.get('/delete/:id', ProcessDeletePage);
 
 

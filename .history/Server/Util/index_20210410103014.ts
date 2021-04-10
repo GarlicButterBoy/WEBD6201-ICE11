@@ -14,9 +14,5 @@ export function UserDisplayName(req: Request): string
 
 export function RequireAuth(req:Request, res:Response, next:NextFunction):void
 {
-    if (!req.isAuthenticated())
-    {
-        return res.redirect('/login');
-    }
-    next();
+
 }

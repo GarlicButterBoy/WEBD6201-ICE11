@@ -71,12 +71,12 @@ app.use(session
   passport.serializeUser(User.serializeUser());
   passport.deserializeUser(User.deserializeUser()); 
 
-  //import util package (Full route authorization validation)
- // import { RequireAuth } from '../Util/index';
+  //import util package
+  import {} from '../Util/in'
 
   //route configuration
 app.use('/', indexRouter);
-app.use('/contact-list', /*RequireAuth,*/ contactListRouter);
+app.use('/contact-list', contactListRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

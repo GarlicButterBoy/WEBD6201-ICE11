@@ -19,9 +19,9 @@ router.get('/add', RequireAuth, DisplayAddPage);
 router.post('/edit/:id', RequireAuth, ProcessEditPage);
 
 /* Process edit/:id page - with /edit/:id */
-router.post('/add', RequireAuth, ProcessAddPage);
+router.post('/add', ProcessAddPage);
 
 /* Process delete/:id page - with /delete/:id */
-router.get('/delete/:id', RequireAuth, ProcessDeletePage);
+router.get('/delete/:id', ProcessDeletePage);
 
 

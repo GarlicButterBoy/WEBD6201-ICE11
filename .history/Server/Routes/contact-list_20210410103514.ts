@@ -13,15 +13,15 @@ router.get('/', RequireAuth,  DisplayContactListPage);
 router.get('/edit/:id', RequireAuth, DisplayEditPage);
 
 /* Display add page - with /add */
-router.get('/add', RequireAuth, DisplayAddPage);
+router.get('/add', DisplayAddPage);
 
 /* Process edit/:id page - with /edit/:id */
-router.post('/edit/:id', RequireAuth, ProcessEditPage);
+router.post('/edit/:id', ProcessEditPage);
 
 /* Process edit/:id page - with /edit/:id */
-router.post('/add', RequireAuth, ProcessAddPage);
+router.post('/add', ProcessAddPage);
 
 /* Process delete/:id page - with /delete/:id */
-router.get('/delete/:id', RequireAuth, ProcessDeletePage);
+router.get('/delete/:id', ProcessDeletePage);
 
 

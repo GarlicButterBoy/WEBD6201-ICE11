@@ -16,12 +16,12 @@ router.get('/edit/:id', RequireAuth, DisplayEditPage);
 router.get('/add', RequireAuth, DisplayAddPage);
 
 /* Process edit/:id page - with /edit/:id */
-router.post('/edit/:id', RequireAuth, ProcessEditPage);
+router.post('/edit/:id', ProcessEditPage);
 
 /* Process edit/:id page - with /edit/:id */
-router.post('/add', RequireAuth, ProcessAddPage);
+router.post('/add', ProcessAddPage);
 
 /* Process delete/:id page - with /delete/:id */
-router.get('/delete/:id', RequireAuth, ProcessDeletePage);
+router.get('/delete/:id', ProcessDeletePage);
 
 

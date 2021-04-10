@@ -71,7 +71,7 @@ app.use(session
   passport.serializeUser(User.serializeUser());
   passport.deserializeUser(User.deserializeUser()); 
 
-  //import util package (Full route authorization validation)
+  //import util package
  // import { RequireAuth } from '../Util/index';
 
   //route configuration

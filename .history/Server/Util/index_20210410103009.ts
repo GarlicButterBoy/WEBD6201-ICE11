@@ -12,11 +12,7 @@ export function UserDisplayName(req: Request): string
     return '';
 }
 
-export function RequireAuth(req:Request, res:Response, next:NextFunction):void
+export function RequireAuth(req:Request, res:Response, next:NextFunction)
 {
-    if (!req.isAuthenticated())
-    {
-        return res.redirect('/login');
-    }
-    next();
+    
 }

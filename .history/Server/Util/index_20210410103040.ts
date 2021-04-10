@@ -18,5 +18,4 @@ export function RequireAuth(req:Request, res:Response, next:NextFunction):void
     {
         return res.redirect('/login');
     }
-    next();
 }
